@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Target: MSM Queries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+
+    <h1>List of all directors</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Dob</th>
+            <th></th>
+        </tr>
+
+        <% @directors.each do |a_director| %>
+            <tr>
+                <td><%= a_director.id %></td>
+                <td><img src="<%= a_director.image %>" width="100"></td>
+                <td><%= a_director.name %></td>
+                <td><%= a_director.dob %></td>
+                <td><a href="/directors/<%= a_director.id %>">Show details</a></td>
+            </tr>
+        <% end %>
+    </table>
+</body>
+</html>
