@@ -5,8 +5,10 @@ class DirectorsController < ApplicationController
   end
 
   def show
-    @director = Director.find(params[:id])
-    render({ :template => "director_templates/show" })
+    id = params.fetch("id")
+    @the_director  = Director.find(id)
+    @matching_movies = Movie.where(director_id: @the_director)
+    render({ :template => "director_templates/details" })
   end
 end
    
