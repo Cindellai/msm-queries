@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actor Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+
+    <h1>Actor Details</h1>
+    <a href="/actors">Go back</a>
+
+    <hr>
+
+    <dl>
+        <dt>Name</dt>
+        <dd><%= @actor.name %></dd>
+
+        <dt>Date of Birth</dt>
+        <dd><%= @actor.dob %></dd>
+
+        <dt>Image</dt>
+        <dd><img src="<%= @actor.image %>" width="100"></dd>
+    </dl>
+
+    <h2>Characters played by <%= @actor.name %></h2>
+    <ul>
+        <% @characters.each do |character| %>
+            <li><%= character.name %></li>
+        <% end %>
+    </ul>
+
+    <h2>Movies starring <%= @actor.name %></h2>
+    <ul>
+        <% @movies.each do |movie| %>
+            <li>
+                <%= movie.title %> (Directed by <%= movie.director.name %>)
+            </li>
+        <% end %>
+    </ul>
+</body>
+</html>

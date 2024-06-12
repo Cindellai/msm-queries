@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+
+  <h1>Movie Details</h1>
+  <a href="/movies">Go back</a>
+
+  <hr>
+
+  <dl>
+    <dt>Title</dt>
+    <dd><%= @movie.title %></dd>
+
+    <dt>Description</dt>
+    <dd><%= @movie.description %></dd>
+
+    <dt>Year</dt>
+    <dd><%= @movie.year %></dd>
+
+    <dt>Duration</dt>
+    <dd><%= @movie.duration %> minutes</dd>
+
+    <dt>Director</dt>
+    <dd><%= @the_director.name %></dd>
+
+    <dt>Created at</dt>
+    <dd><%= @movie.created_at %></dd>
+
+    <dt>Updated at</dt>
+    <dd><%= @movie.updated_at %></dd>
+  </dl>
+</body>
+</html>
